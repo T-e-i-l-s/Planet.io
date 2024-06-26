@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Styles.css";
-import Model from "../../views/planet/View";
 import TextBlock from "../../views/textBlock/View";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import planets from "../../../../data/planets.json";
+import constellations from "../../../../data/constellations.json";
 
 export default function Page() {
   const navigate = useNavigate();
   const location = useLocation();
-  const planetName = useParams().name;
-  const planetInfo = planets[planetName];
+  const constellationNmae = useParams().name;
+  const constellationInfo = constellations[constellationNmae];
 
   const [isVisible, setIsVisible] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
@@ -37,31 +36,36 @@ export default function Page() {
   };
 
   return (
-    <div className="earth-container">
-      <button onClick={() => navigate(-1)} className="planet-go-back-button">
+    <div className="constellation-container">
+      <button
+        onClick={() => navigate(-1)}
+        className="constellation-go-back-button"
+      >
         Назад
       </button>
-      <h1 className="earth-title">{planetInfo.name}</h1>
-      <Model
-        modelPath={planetInfo.path}
-        scale={planetInfo.scale}
-        light={planetInfo.light}
-      />
+      <h1 className="constellation-title">{constellationInfo.name}</h1>
 
-      <button onClick={toggleVisibility} className="planet-open-modal-button">
+      <img className="constellation-image" src={constellationInfo.path} />
+
+      <button
+        onClick={toggleVisibility}
+        className="constellation-open-modal-button"
+      >
         Информация об объекте
       </button>
 
       {hasOpened && (
-        <div className={`planet-info-block ${isVisible ? "visible" : ""}`}>
+        <div
+          className={`constellation-info-block ${isVisible ? "visible" : ""}`}
+        >
           <button
             onClick={closeInfoBlock}
-            className="planet-close-modal-button"
+            className="constellation-close-modal-button"
           >
             Закрыть
           </button>
-          <ul className="planet-info-list">
-            {planetInfo.about.map((item, index) => (
+          <ul className="constellation-info-list">
+            {constellationInfo.about.map((item, index) => (
               <TextBlock
                 key={index}
                 title={item.name}
@@ -72,17 +76,6 @@ export default function Page() {
                 }}
               />
             ))}
-            {planetName == "earth" && (
-              <TextBlock
-                key={-1}
-                title={"Влияние на здоровье"}
-                text={"Микрогравитация, излучение и многое другое"}
-                style={{
-                  zIndex: 100,
-                  width: 200,
-                }}
-              />
-            )}
           </ul>
         </div>
       )}

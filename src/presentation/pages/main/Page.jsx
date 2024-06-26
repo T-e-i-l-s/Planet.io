@@ -20,7 +20,6 @@ export default function Page() {
         side: Math.random() * 4,
       });
     }
-    console.log(arr);
     setStars(arr);
   }, []);
 
@@ -99,6 +98,9 @@ export default function Page() {
               top: "50%",
               left: "20%",
             }}
+            onClick={() => {
+              navigate("/constellation/bear");
+            }}
           />
         </>
       ) : (
@@ -135,7 +137,6 @@ export default function Page() {
 }
 
 function Star({ star }) {
-  console.log(star);
   const style = {
     "--x": `${star.x}px`,
     "--y": `${star.y}px`,

@@ -5,6 +5,7 @@ import Main from "./presentation/pages/main/Page";
 import Planet from "./presentation/pages/planet/Page";
 import SolarSystem from "./presentation/pages/solarSystem/Page";
 import Transition from "./presentation/pages/transition/Page";
+import Constellation from "./presentation/pages/constellation/Page";
 import Search from "./presentation/pages/search/Page";
 
 function AnimatedRoutes() {
@@ -58,6 +59,18 @@ function AnimatedRoutes() {
               transition={{ duration: 0.5 }}
             >
               <Planet />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/constellation/:name"
+          element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Constellation />
             </motion.div>
           }
         />
