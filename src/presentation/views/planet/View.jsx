@@ -24,7 +24,7 @@ function Loading() {
   );
 }
 
-export default function View({ modelPath }) {
+export default function View({ modelPath, scale, light }) {
   return (
     <>
       <Suspense>
@@ -37,8 +37,8 @@ export default function View({ modelPath }) {
             zIndex: 2,
           }}
         >
-          <ambientLight intensity={modelPath == "/mars.glb" ? 3 : 10} />
-          <Model scale={0.001} modelPath={modelPath} />
+          <ambientLight intensity={light} />
+          <Model scale={scale} modelPath={modelPath} />
           <OrbitControls rotateSpeed={0.5} minDistance={1} maxDistance={3} />
         </Canvas>
       </Suspense>

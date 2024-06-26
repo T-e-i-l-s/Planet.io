@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "./Styles.css";
 
-export default function App({ requestedTitle, requestedText, style }) {
+export default function App({ title, text, style }) {
   const [symbols, setSymbols] = useState(0);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [text, setText] = useState("");
 
-  useEffect(() => {
-    setTitle(("" + requestedTitle).substring(0, symbols));
-    setText(
-      ("" + requestedText).substring(0, symbols - ("" + requestedTitle).length)
-    );
-  }, [symbols]);
+  // useEffect(() => {
+  //   setTitle(("" + requestedTitle).substring(0, symbols));
+  //   setText(
+  //     ("" + requestedText).substring(0, symbols - ("" + requestedTitle).length)
+  //   );
+  // }, [symbols]);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setSymbols((prevSymbols) => {
-        const newSymbols = prevSymbols + 1;
-        if (newSymbols >= requestedText.length + requestedTitle.length) {
-          clearInterval(intervalId);
-        }
-        return newSymbols;
-      });
-    }, 50);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setSymbols((prevSymbols) => {
+  //       const newSymbols = prevSymbols + 1;
+  //       if (newSymbols >= requestedText.length + requestedTitle.length) {
+  //         clearInterval(intervalId);
+  //       }
+  //       return newSymbols;
+  //     });
+  //   }, 10);
 
-    return () => clearInterval(intervalId);
-  }, []);
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   return (
     <div
@@ -42,7 +42,8 @@ export default function App({ requestedTitle, requestedText, style }) {
       }}
     >
       <h3 className="text-title">{title}</h3>
-      {symbols > title.length && <p className="text-text">{text}</p>}
+      {/* {symbols > title.length && <p className="text-text">{text}</p>} */}
+      <p className="text-text">{text}</p>
     </div>
   );
 }

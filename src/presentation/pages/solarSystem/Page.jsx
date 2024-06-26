@@ -67,13 +67,13 @@ const planets = [
   {
     name: "Марс",
     size: 30,
-    color: "../../../../public/mars.svg",
+    color: "/mars.svg",
     navpoint: "/planet/mars",
   },
   {
     name: "Земля",
     size: 35,
-    color: "../../../../public/earth.svg",
+    color: "/earth.svg",
     navpoint: "/planet/earth",
   },
   // {
@@ -91,7 +91,7 @@ const planets = [
   {
     name: "Солнце",
     size: 200,
-    color: "../../../../public/sun.svg",
+    color: "/sun.svg",
     navpoint: "/planet/sun",
   },
 ];

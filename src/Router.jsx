@@ -5,6 +5,7 @@ import Main from "./presentation/pages/main/Page";
 import Planet from "./presentation/pages/planet/Page";
 import SolarSystem from "./presentation/pages/solarSystem/Page";
 import Transition from "./presentation/pages/transition/Page";
+import Search from "./presentation/pages/search/Page";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -21,6 +22,18 @@ function AnimatedRoutes() {
               transition={{ duration: 0.5 }}
             >
               <Main />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Search />
             </motion.div>
           }
         />
