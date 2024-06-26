@@ -1,0 +1,75 @@
+@import '../../../assets/values/Colors.css';
+@import '../../../assets/values/Fonts.css';
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  transition: 3s;
+}
+
+.main-planet {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, var(--text-color) 0%, transparent 60%);
+
+  border-radius: 50%;
+  transition: 3s;
+}
+
+.hover-text {
+  position: absolute;
+  font-size: 16rem;
+  font-weight: 300;
+  text-align: left;
+  font-family: var(--font);
+  color: var(--text-color);
+  animation: fadeIn 0.3s ease-in;
+  transform: translateY(-50%);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.main-stars {
+  position: absolute;
+  width: 700px;
+  height: 100px;
+  transition: 1s;
+  opacity: 0.2;
+}
+
+.main-stars:hover {
+  opacity: 1;
+}
+
+
+.main-info-text {
+  font-size: 13rem;
+  text-align: left;
+  font-family: var(--font);
+  color: var(--text-color);
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.main-object-block {
+  font-size: 16rem;
+  font-weight: bold;
+  text-align: left;
+  font-family: var(--font);
+  color: var(--text-color);
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 20px;
+  border: 0;
+  margin-bottom: 10px;
+  border-radius: 16px;
+}

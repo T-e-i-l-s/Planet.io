@@ -1,0 +1,76 @@
+@import '../../../assets/values/Colors.css';
+@import '../../../assets/values/Fonts.css';
+
+.solar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.solar-go-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16rem;
+  text-align: center;
+  font-family: var(--font);
+  color: var(--text-color);
+  border: 0;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.solar-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.solar-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
+
+.solar-planet-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.solar-planet-block:hover {
+  transform: scale(1.03);
+  opacity: 0.7;
+}
+
+.solar-planet {
+  background-color: var(--text-color);
+  border-radius: 50%;
+}
+
+.solar-planet-name {
+  font-size: 18rem;
+  font-weight: 300;
+  text-align: left;
+  font-family: var(--font);
+  color: var(--text-color);
+  margin-left: 20px;
+}
+
+.star-container {
+  position: absolute;
+  height: var(--side);
+  width: var(--side);
+  left: var(--x);
+  top: var(--y);
+  border-radius: 5px;
+  background-color: var(--text-color);
+  box-shadow: 0 0 15px 1px var(--text-color);
+}

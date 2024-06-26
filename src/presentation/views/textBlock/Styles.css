@@ -1,0 +1,23 @@
+@import '../../../assets/values/Colors.css';
+@import '../../../assets/values/Fonts.css';
+
+.text-title {
+  font-size: 19rem;
+  text-align: start;
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.text-text {
+  font-size: 16rem;
+  font-weight: 300;
+  text-align: start;
+  font-family: var(--font);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+}
