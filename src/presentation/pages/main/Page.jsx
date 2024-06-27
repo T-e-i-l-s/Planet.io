@@ -4,7 +4,9 @@ import { useSpring, animated } from "react-spring";
 import "./Styles.css";
 import "../../../assets/values/Colors.css";
 import planets from "../../../../data/planets.json";
+import constellations from "../../../../data/constellations.json";
 import SpaceObject from "../../views/object/View";
+import Star from "../../views/Star";
 
 export default function Page() {
   const navigate = useNavigate();
@@ -130,18 +132,23 @@ export default function Page() {
               </button>
             );
           })}
+          {Object.entries(constellations).map(([key, value]) => {
+            return (
+              <button
+                key={key}
+                onClick={() => navigate(`/constellation/${key}`)}
+                className="main-object-block"
+                style={{
+                  top: "calc(20% + 20px)",
+                  left: "calc(40% + 45px)",
+                }}
+              >
+                {value.name}
+              </button>
+            );
+          })}
         </>
       )}
     </div>
   );
-}
-
-function Star({ star }) {
-  const style = {
-    "--x": `${star.x}px`,
-    "--y": `${star.y}px`,
-    "--side": `${star.side}px`,
-  };
-
-  return <div className="star-container" style={style}></div>;
 }

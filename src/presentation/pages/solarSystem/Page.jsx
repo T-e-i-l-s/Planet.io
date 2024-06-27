@@ -1,11 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Styles.css";
 import { useNavigate } from "react-router-dom";
+import Star from "../../views/Star";
 
 export default function Page() {
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    const arr = [];
+    for (let i = 0; i < window.innerWidth * window.innerHeight * 0.00006; i++) {
+      arr.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        side: Math.random() * 4,
+      });
+    }
+    setStars(arr);
+  }, []);
+
   const navigate = useNavigate();
+
   return (
     <div className="solar-container">
+      {stars.map((item, index) => {
+        return <Star key={index} star={item} />;
+      })}
+
       <button onClick={() => navigate("/")} className="solar-go-back-button">
         Назад
       </button>

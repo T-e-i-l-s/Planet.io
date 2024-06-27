@@ -61,6 +61,7 @@
 }
 
 .main-object-block {
+  z-index: 1;
   font-size: 16rem;
   font-weight: bold;
   text-align: left;

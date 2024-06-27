@@ -64,6 +64,7 @@ input:focus {
 }
 
 .search-object-block {
+  position: relative;
   font-size: 16rem;
   font-weight: bold;
   text-align: left;
@@ -76,4 +77,5 @@ input:focus {
   border: 0;
   margin-bottom: 10px;
   border-radius: 16px;
+  z-index: 1;
 }

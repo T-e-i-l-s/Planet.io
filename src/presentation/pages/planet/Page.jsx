@@ -4,8 +4,23 @@ import Model from "../../views/planet/View";
 import TextBlock from "../../views/textBlock/View";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import planets from "../../../../data/planets.json";
+import Star from "../../views/Star";
 
 export default function Page() {
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    const arr = [];
+    for (let i = 0; i < window.innerWidth * window.innerHeight * 0.00006; i++) {
+      arr.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        side: Math.random() * 4,
+      });
+    }
+    setStars(arr);
+  }, []);
+
   const navigate = useNavigate();
   const location = useLocation();
   const planetName = useParams().name;
@@ -38,6 +53,9 @@ export default function Page() {
 
   return (
     <div className="earth-container">
+      {stars.map((item, index) => {
+        return <Star key={index} star={item} />;
+      })}
       <button onClick={() => navigate(-1)} className="planet-go-back-button">
         Назад
       </button>
