@@ -37,7 +37,7 @@
   border-radius: 100%;
   transition: 1s;
   transform-style: preserve-3d;
-  border: 3px dotted var(--hidden-text-color),
+  border: 3px dotted var(--hidden-text-color);
 }
 
 .solar-planet {

@@ -4,10 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Main from "./presentation/pages/main/Page";
 import Planet from "./presentation/pages/planet/Page";
 import SolarSystem from "./presentation/pages/solarSystem/Page";
-import Transition from "./presentation/pages/transition/Page";
 import Constellation from "./presentation/pages/constellation/Page";
 import Search from "./presentation/pages/search/Page";
-import Kepler62 from "./presentation/pages/kepler/Page";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -39,7 +37,7 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
-        <Route
+        {/* <Route
           path="/transition"
           element={
             <motion.div
@@ -50,7 +48,7 @@ function AnimatedRoutes() {
               <Transition />
             </motion.div>
           }
-        />
+        /> */}
         <Route
           path="/planet/:name"
           element={
