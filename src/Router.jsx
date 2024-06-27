@@ -7,6 +7,7 @@ import SolarSystem from "./presentation/pages/solarSystem/Page";
 import Transition from "./presentation/pages/transition/Page";
 import Constellation from "./presentation/pages/constellation/Page";
 import Search from "./presentation/pages/search/Page";
+import Kepler62 from "./presentation/pages/kepler/Page";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -86,6 +87,18 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
+        {/* <Route
+          path="/kepler62"
+          element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Kepler62 />
+            </motion.div>
+          }
+        /> */}
       </Routes>
     </AnimatePresence>
   );

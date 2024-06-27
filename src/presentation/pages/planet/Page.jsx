@@ -57,7 +57,7 @@ export default function Page() {
         return <Star key={index} star={item} />;
       })}
       <button onClick={() => navigate(-1)} className="planet-go-back-button">
-        Назад
+        <img src="/back.svg" width={"35rem"} height={"35rem"} />
       </button>
       <h1 className="earth-title">{planetInfo.name}</h1>
       <Model
@@ -76,7 +76,7 @@ export default function Page() {
             onClick={closeInfoBlock}
             className="planet-close-modal-button"
           >
-            Закрыть
+            <img src="/close.svg" width={"30rem"} height={"30rem"} />
           </button>
           <ul className="planet-info-list">
             {planetInfo.about.map((item, index) => (
@@ -90,7 +90,7 @@ export default function Page() {
                 }}
               />
             ))}
-            {planetName == "earth" && (
+            {/* {planetName == "earth" && (
               <TextBlock
                 key={-1}
                 title={"Влияние на здоровье"}
@@ -100,7 +100,7 @@ export default function Page() {
                   width: 200,
                 }}
               />
-            )}
+            )} */}
           </ul>
         </div>
       )}

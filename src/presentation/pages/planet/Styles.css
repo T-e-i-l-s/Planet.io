@@ -55,18 +55,18 @@
   flex-direction: column;
   position: absolute;
   width: calc(100% - 40px);
-  height: calc(100% - 40px); /* изменено с min-height на height для полного охвата */
-  bottom: -100%;
+  min-height: calc(100% - 40px); /* изменено с min-height на height для полного охвата */
+  top: 100%;
   left: 0;
   right: 0;
   background-color: var(--modal-background-color);
   padding: 20px;
-  transition: bottom 1s ease-in-out;
+  transition: top 1s ease-in-out;
   z-index: 255;
 }
 
 .planet-info-block.visible {
-    bottom: 0;
+    top: 0;
 }
 
 

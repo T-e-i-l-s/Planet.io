@@ -53,7 +53,7 @@ export default function Page() {
         return <Star key={index} star={item} />;
       })}
       <button onClick={() => navigate(-1)} className="search-go-back-button">
-        Назад
+        <img src="/back.svg" width={"35rem"} height={"35rem"} />
       </button>
       <input
         className="input"
@@ -63,12 +63,8 @@ export default function Page() {
         onChange={(e) => setRequest(e.target.value)}
       />
       {Object.entries(results.planets).length +
-        Object.entries(results.constellations).length >
-      0 ? (
-        <p className="search-results-title">Результаты</p>
-      ) : (
-        <p className="search-results-title">Ничего не найдено</p>
-      )}
+        Object.entries(results.constellations).length ==
+        0 && <p className="search-results-title">Ничего не найдено</p>}
 
       <ul className="search-list">
         {Object.entries(results.planets).map(([key, value]) => {

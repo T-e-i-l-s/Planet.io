@@ -22,15 +22,17 @@
 }
 
 .input {
-  max-width: 460px;
-  width: calc(100% - 40px);
-  background-color: var(--main-color);
+  max-width: 480px;
+  width: calc(100% - 20px);
+  background-color: transparent;
 
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
   
   border-width: 0;
-  border-radius: 16px;
+  border-bottom: 2px solid var(--hidden-text-color);
+  outline-width: 0;
+  /* border-radius: 16px; */
 
   font-size: 16px;
   font-family: var(--font);
@@ -43,13 +45,13 @@
 }
 
 input:focus {
-  outline-color: var(--text-color);
-  outline-width: 8px;
+  border-bottom: 2px solid var(--text-color);
 }
 
 .search-results-title {
   font-size: 16rem;
   text-align: left;
+  font-weight: 300;
   font-family: var(--font);
   color: var(--text-color);
   max-width: 500px;

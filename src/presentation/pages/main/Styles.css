@@ -11,22 +11,35 @@
 }
 
 .main-nav-button1 {
+  display: flex;
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 16rem;
+  font-size: 19rem;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   text-align: center;
   font-family: var(--font);
   color: var(--text-color);
   border: 0;
   background-color: transparent;
   z-index: 100;
+  transition: 0.7s;
+}
+
+.main-nav-button1:hover {
+  opacity: 0.7;
 }
 
 .main-nav-button2 {
+  display: flex;
   width: 100%;
-  font-size: 16rem;
+  font-size: 19rem;
   text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
   font-family: var(--font);
   color: var(--text-color);
   border: 0;
@@ -39,8 +52,6 @@
 
 .main-stars {
   position: absolute;
-  width: 700px;
-  height: 100px;
   transition: 1s;
   opacity: 0.2;
 }

@@ -37,7 +37,7 @@ export default function Page() {
       })}
 
       <button onClick={() => navigate("/")} className="solar-go-back-button">
-        Назад
+        <img src="/back.svg" width={"35rem"} height={"35rem"} />
       </button>
 
       <div className="solar-list">
@@ -63,6 +63,42 @@ export default function Page() {
                   navigate(item.navpoint);
                 }}
               />
+              {item.name == "Земля" && (
+                <>
+                  <div
+                    className="solar-planet"
+                    style={{
+                      width: item.size / 6 + "rem",
+                      height: item.size / 6 + "rem",
+                      top: (index + 1) * 65 + "px",
+                      left: "calc(50% + 20px)",
+                      zIndex: 150,
+                    }}
+                    onClick={() => {
+                      navigate("/planet/moon");
+                    }}
+                  />
+                  <div
+                    className="solar-orbit"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      top: (index + 1) * 65 + "px",
+                      left: "calc(50%)",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  />
+                  <p
+                    className="solar-planet-name show"
+                    style={{
+                      top: (index + 1) * 65 + "px",
+                      left: "calc(50% + 20px)",
+                    }}
+                  >
+                    Луна
+                  </p>
+                </>
+              )}
               <p
                 className="solar-planet-name show"
                 style={{
@@ -85,28 +121,28 @@ const planets = [
     size: 40,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/neptune",
   },
   {
     name: "Уран",
     size: 40,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/uranus",
   },
   {
     name: "Сатурн",
     size: 80,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/saturn",
   },
   {
     name: "Юпитер",
     size: 100,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/jupiter",
   },
   {
     name: "Марс",
@@ -117,7 +153,7 @@ const planets = [
   },
   {
     name: "Земля",
-    size: 35,
+    size: 39,
     orbit: 110,
     color: "/earth.svg",
     navpoint: "/planet/earth",
@@ -127,14 +163,14 @@ const planets = [
     size: 35,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/venus",
   },
   {
     name: "Меркурий",
     size: 30,
     orbit: 110,
     color: "white",
-    navpoint: "/earth",
+    navpoint: "/planet/mercury",
   },
   {
     name: "Солнце",

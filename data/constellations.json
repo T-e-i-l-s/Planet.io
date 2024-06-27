@@ -8,5 +8,25 @@
         "text": "Созвездие короче"
       }
     ]
+  },
+  "dragon": {
+    "name": "Дракон",
+    "path": "/dragon.svg",
+    "about": [
+      {
+        "name": "Описание",
+        "text": "Созвездие короче"
+      }
+    ]
+  },
+  "cassiopeia": {
+    "name": "Кассиопею ",
+    "path": "/cassiopeia.svg",
+    "about": [
+      {
+        "name": "Описание",
+        "text": "Созвездие короче"
+      }
+    ]
   }
 }

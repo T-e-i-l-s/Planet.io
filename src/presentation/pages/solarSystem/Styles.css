@@ -35,7 +35,6 @@
   background-color: transparent;
   transform: translateX(-50%);
   border-radius: 100%;
-  z-index: 1;
   transition: 1s;
   transform-style: preserve-3d;
   border: 3px dotted var(--hidden-text-color),
@@ -58,7 +57,7 @@
   background-color: var(--hidden-text-color);
   border-radius: 100%;
   z-index: 1;
-  transition: 1s;
+  transition: 0.3s;
 }
 
 @keyframes fadeIn {

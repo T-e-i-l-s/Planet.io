@@ -37,6 +37,7 @@ export default function Page() {
             onClick={() => navigate("/search")}
             className="main-nav-button1"
           >
+            <img src="/search.svg" width={"20rem"} height={"20rem"} />
             Поиск
           </button>
           <SpaceObject
@@ -59,25 +60,43 @@ export default function Page() {
 
           <SpaceObject
             style={{
-              top: "50%",
-              left: "10%",
+              top: "15%",
+              left: "25%",
             }}
-            name={"Вояджер"}
+            name={"Voyadger 1"}
             onClick={() => {
               setScreenOpacity(0);
               setTimeout(() => {
-                navigate("/planet/voyager");
+                navigate("/planet/voyager1");
               }, 1500);
             }}
             textPosition={{
-              top: "calc(50% + 20px)",
-              left: "calc(10% + 45px)",
+              top: "calc(15% + 20px)",
+              left: "calc(25% + 45px)",
             }}
           />
 
           <SpaceObject
             style={{
-              top: "70%",
+              top: "30%",
+              left: "30%",
+            }}
+            name={"Voyadger 2"}
+            onClick={() => {
+              setScreenOpacity(0);
+              setTimeout(() => {
+                navigate("/planet/voyager2");
+              }, 1500);
+            }}
+            textPosition={{
+              top: "calc(30% + 20px)",
+              left: "calc(30% + 45px)",
+            }}
+          />
+
+          <SpaceObject
+            style={{
+              top: "40%",
               left: "60%",
             }}
             name={"Proxima B"}
@@ -88,8 +107,62 @@ export default function Page() {
               }, 1500);
             }}
             textPosition={{
-              top: "calc(70% + 20px)",
+              top: "calc(40% + 20px)",
               left: "calc(60% + 45px)",
+            }}
+          />
+
+          <SpaceObject
+            style={{
+              top: "60%",
+              left: "40%",
+            }}
+            name={"Cancri E"}
+            onClick={() => {
+              setScreenOpacity(0);
+              setTimeout(() => {
+                navigate("/planet/cancri");
+              }, 1500);
+            }}
+            textPosition={{
+              top: "calc(60% + 20px)",
+              left: "calc(40% + 45px)",
+            }}
+          />
+
+          <SpaceObject
+            style={{
+              top: "80%",
+              left: "10%",
+            }}
+            name={"Vesta"}
+            onClick={() => {
+              setScreenOpacity(0);
+              setTimeout(() => {
+                navigate("/planet/vesta");
+              }, 1500);
+            }}
+            textPosition={{
+              top: "calc(80% + 20px)",
+              left: "calc(10% + 45px)",
+            }}
+          />
+
+          <SpaceObject
+            style={{
+              top: "70%",
+              left: "75%",
+            }}
+            name={"WASP-12 b"}
+            onClick={() => {
+              setScreenOpacity(0);
+              setTimeout(() => {
+                navigate("/planet/wasp");
+              }, 1500);
+            }}
+            textPosition={{
+              top: "calc(70% + 20px)",
+              left: "calc(75% + 45px)",
             }}
           />
 
@@ -97,11 +170,41 @@ export default function Page() {
             src="/bear.svg"
             className="main-stars"
             style={{
-              top: "50%",
-              left: "20%",
+              top: "70%",
+              left: "30%",
+              width: "400px",
+              height: "120px",
             }}
             onClick={() => {
               navigate("/constellation/bear");
+            }}
+          />
+
+          <img
+            src="/dragon.svg"
+            className="main-stars"
+            style={{
+              top: "10%",
+              left: "3%",
+              width: "500px",
+              height: "300px",
+            }}
+            onClick={() => {
+              navigate("/constellation/dragon");
+            }}
+          />
+
+          <img
+            src="/cassiopeia.svg"
+            className="main-stars"
+            style={{
+              top: "20%",
+              left: "80%",
+              width: "100px",
+              height: "200px",
+            }}
+            onClick={() => {
+              navigate("/constellation/cassiopeia");
             }}
           />
         </>
@@ -111,6 +214,7 @@ export default function Page() {
             onClick={() => navigate("/search")}
             className="main-nav-button2"
           >
+            <img src="/search.svg" width={"20rem"} height={"20rem"} />
             Поиск
           </button>
           <p className="main-info-text">
