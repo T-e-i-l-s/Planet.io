@@ -10,9 +10,16 @@
   transition: 3s;
 }
 
+.search-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+}
+
 .search-go-back-button {
   font-size: 16rem;
-  width: 100%;
   text-align: left;
   font-family: var(--font);
   color: var(--text-color);
@@ -68,7 +75,7 @@ input:focus {
 
 .search-object-block {
   position: relative;
-  font-size: 16rem;
+  font-size: 19rem;
   font-weight: bold;
   text-align: left;
   font-family: var(--font);

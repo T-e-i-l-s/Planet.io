@@ -16,7 +16,14 @@ export default function App({ style, onClick, name, textPosition }) {
           onClick();
         }}
       />
-      <div className="hover-text" style={{ ...textPosition }}>
+      <div
+        className="hover-text"
+        style={{ ...textPosition }}
+        onClick={() => {
+          setStarScale(300);
+          onClick();
+        }}
+      >
         {name}
       </div>
     </>

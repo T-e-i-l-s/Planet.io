@@ -25,6 +25,7 @@ export default function Page() {
       {stars.map((item, index) => {
         return (
           <div
+            key={index}
             style={{
               position: "fixed",
               top: 0,
@@ -47,17 +48,17 @@ export default function Page() {
               <div
                 className="solar-orbit"
                 style={{
-                  width: (planets.length - index - 1) * 130 + "px",
-                  height: (planets.length - index - 1) * 130 + "px",
-                  top: (index + 1) * 65 + "px",
+                  width: (planets.length - index - 1) * 190 + "px",
+                  height: (planets.length - index - 1) * 190 + "px",
+                  top: (index + 1) * 95 + "px",
                 }}
               />
               <div
                 className="solar-planet"
                 style={{
-                  width: item.size / 3 + "rem",
-                  height: item.size / 3 + "rem",
-                  top: (index + 1) * 65 + "px",
+                  width: item.size / 2.5 + "rem",
+                  height: item.size / 2.5 + "rem",
+                  top: (index + 1) * 95 + "px",
                 }}
                 onClick={() => {
                   navigate(item.navpoint);
@@ -68,10 +69,10 @@ export default function Page() {
                   <div
                     className="solar-planet"
                     style={{
-                      width: item.size / 6 + "rem",
-                      height: item.size / 6 + "rem",
-                      top: (index + 1) * 65 + "px",
-                      left: "calc(50% + 20px)",
+                      width: item.size / 5.4 + "rem",
+                      height: item.size / 5.4 + "rem",
+                      top: (index + 1) * 95 + "px",
+                      left: "calc(50% + 25px)",
                       zIndex: 150,
                     }}
                     onClick={() => {
@@ -81,9 +82,9 @@ export default function Page() {
                   <div
                     className="solar-orbit"
                     style={{
-                      width: "40px",
-                      height: "40px",
-                      top: (index + 1) * 65 + "px",
+                      width: "45px",
+                      height: "45px",
+                      top: (index + 1) * 95 + "px",
                       left: "calc(50%)",
                       transform: "translate(-50%, -50%)",
                     }}
@@ -91,8 +92,11 @@ export default function Page() {
                   <p
                     className="solar-planet-name show"
                     style={{
-                      top: (index + 1) * 65 + "px",
-                      left: "calc(50% + 20px)",
+                      top: (index + 1) * 95 + "px",
+                      left: "calc(50% + 25px)",
+                    }}
+                    onClick={() => {
+                      navigate("/planet/moon");
                     }}
                   >
                     Луна
@@ -102,7 +106,10 @@ export default function Page() {
               <p
                 className="solar-planet-name show"
                 style={{
-                  top: (index + 1) * 65 - item.size / 3 / 2 - 30 + "px",
+                  top: (index + 1) * 95 - item.size / 3 / 2 - 43 + "px",
+                }}
+                onClick={() => {
+                  navigate(item.navpoint);
                 }}
               >
                 {item.name}

@@ -62,7 +62,7 @@
 
 
 .main-info-text {
-  font-size: 13rem;
+  font-size: 16rem;
   text-align: left;
   font-family: var(--font);
   color: var(--text-color);
@@ -73,7 +73,7 @@
 
 .main-object-block {
   z-index: 1;
-  font-size: 16rem;
+  font-size: 19rem;
   font-weight: bold;
   text-align: left;
   font-family: var(--font);

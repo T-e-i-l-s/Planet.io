@@ -51,13 +51,7 @@
 }
 
 .solar-planet:hover {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: var(--hidden-text-color);
-  border-radius: 100%;
-  z-index: 1;
-  transition: 0.3s;
 }
 
 @keyframes fadeIn {
@@ -71,7 +65,7 @@
 
 .solar-planet-name {
   position: absolute;
-  font-size: 11rem;
+  font-size: 15rem;
   font-weight: 300;
   text-align: left;
   font-family: var(--font);
@@ -81,7 +75,6 @@
   animation: fadeIn 0.7s ease-in-out forwards; 
   z-index: 255;
 }
-
 
 .solar-planet-name.show {
   opacity: 1; 

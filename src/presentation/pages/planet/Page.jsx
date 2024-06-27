@@ -54,7 +54,18 @@ export default function Page() {
   return (
     <div className="earth-container">
       {stars.map((item, index) => {
-        return <Star key={index} star={item} />;
+        return (
+          <div
+            key={index}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+            }}
+          >
+            <Star key={index} star={item} />
+          </div>
+        );
       })}
       <button onClick={() => navigate(-1)} className="planet-go-back-button">
         <img src="/back.svg" width={"35rem"} height={"35rem"} />

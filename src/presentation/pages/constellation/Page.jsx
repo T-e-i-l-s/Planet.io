@@ -53,7 +53,18 @@ export default function Page() {
   return (
     <div className="constellation-container">
       {stars.map((item, index) => {
-        return <Star key={index} star={item} />;
+        return (
+          <div
+            key={index}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+            }}
+          >
+            <Star key={index} star={item} />
+          </div>
+        );
       })}
 
       <button
@@ -88,8 +99,9 @@ export default function Page() {
             onClick={closeInfoBlock}
             className="constellation-close-modal-button"
           >
-            Закрыть
+            <img src="/close.svg" width={"30rem"} height={"30rem"} />
           </button>
+
           <ul className="constellation-info-list">
             {constellationInfo.about.map((item, index) => (
               <TextBlock
