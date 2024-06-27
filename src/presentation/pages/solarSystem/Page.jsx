@@ -23,7 +23,17 @@ export default function Page() {
   return (
     <div className="solar-container">
       {stars.map((item, index) => {
-        return <Star key={index} star={item} />;
+        return (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+            }}
+          >
+            <Star key={index} star={item} />
+          </div>
+        );
       })}
 
       <button onClick={() => navigate("/")} className="solar-go-back-button">
@@ -33,24 +43,34 @@ export default function Page() {
       <div className="solar-list">
         {planets.map((item, index) => {
           return (
-            <div
-              key={index}
-              className="solar-planet-block"
-              onClick={() => navigate(item.navpoint)}
-            >
-              <img
-                src={item.color}
-                className="solar-planet"
+            <div key={index} className="solar-planet-block">
+              <div
+                className="solar-orbit"
                 style={{
-                  width: item.size + "rem",
-                  height: item.size + "rem",
-                  marginTop: 25,
-                  marginBottom: 25,
-                  marginLeft: 100 - item.size / 2,
-                  backgroundColor: "transparent",
+                  width: (planets.length - index - 1) * 130 + "px",
+                  height: (planets.length - index - 1) * 130 + "px",
+                  top: (index + 1) * 65 + "px",
                 }}
               />
-              <p className="solar-planet-name">{item.name}</p>
+              <div
+                className="solar-planet"
+                style={{
+                  width: item.size / 3 + "rem",
+                  height: item.size / 3 + "rem",
+                  top: (index + 1) * 65 + "px",
+                }}
+                onClick={() => {
+                  navigate(item.navpoint);
+                }}
+              />
+              <p
+                className="solar-planet-name show"
+                style={{
+                  top: (index + 1) * 65 - item.size / 3 / 2 - 30 + "px",
+                }}
+              >
+                {item.name}
+              </p>
             </div>
           );
         })}
@@ -60,57 +80,66 @@ export default function Page() {
 }
 
 const planets = [
-  // {
-  //   name: "Нептун",
-  //   size: 40,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
-  // {
-  //   name: "Уран",
-  //   size: 40,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
-  // {
-  //   name: "Сатурн",
-  //   size: 80,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
-  // {
-  //   name: "Юпитер",
-  //   size: 100,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
+  {
+    name: "Нептун",
+    size: 40,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
+  {
+    name: "Уран",
+    size: 40,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
+  {
+    name: "Сатурн",
+    size: 80,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
+  {
+    name: "Юпитер",
+    size: 100,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
   {
     name: "Марс",
     size: 30,
+    orbit: 110,
     color: "/mars.svg",
     navpoint: "/planet/mars",
   },
   {
     name: "Земля",
     size: 35,
+    orbit: 110,
     color: "/earth.svg",
     navpoint: "/planet/earth",
   },
-  // {
-  //   name: "Венера",
-  //   size: 35,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
-  // {
-  //   name: "Меркурий",
-  //   size: 20,
-  //   color: "white",
-  //   navpoint: "/earth",
-  // },
+  {
+    name: "Венера",
+    size: 35,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
+  {
+    name: "Меркурий",
+    size: 30,
+    orbit: 110,
+    color: "white",
+    navpoint: "/earth",
+  },
   {
     name: "Солнце",
-    size: 200,
+    size: 160,
+    orbit: 110,
     color: "/sun.svg",
     navpoint: "/planet/sun",
   },

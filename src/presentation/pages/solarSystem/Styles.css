@@ -22,46 +22,70 @@
 }
 
 .solar-list {
+  position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
-.solar-circle {
+.solar-orbit {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid var(--text-color);
-}
-
-.solar-planet-block {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.solar-planet-block:hover {
-  transform: scale(1.03);
-  opacity: 0.7;
+  background-color: transparent;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  z-index: 1;
+  transition: 1s;
+  transform-style: preserve-3d;
+  border: 3px dotted var(--hidden-text-color),
 }
 
 .solar-planet {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--text-color);
-  border-radius: 50%;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 1s;
+}
+
+.solar-planet:hover {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--hidden-text-color);
+  border-radius: 100%;
+  z-index: 1;
+  transition: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .solar-planet-name {
-  font-size: 18rem;
+  position: absolute;
+  font-size: 11rem;
   font-weight: 300;
   text-align: left;
   font-family: var(--font);
   color: var(--text-color);
-  margin-left: 20px;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out forwards; 
+  z-index: 255;
+}
+
+
+.solar-planet-name.show {
+  opacity: 1; 
 }
 
 .star-container {
