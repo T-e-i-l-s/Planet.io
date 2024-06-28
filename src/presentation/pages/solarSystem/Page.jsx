@@ -45,7 +45,7 @@ export default function Page() {
         {planets.map((item, index) => {
           if (item.name == "Главный пояс астероидов") {
             return (
-              <>
+              <div key={index}>
                 <div
                   className="solar-asteroid-orbit1"
                   style={{
@@ -65,7 +65,7 @@ export default function Page() {
                     top: (index + 1) * 95 + 15 + "px",
                   }}
                 />
-              </>
+              </div>
             );
           } else {
             return (
@@ -125,6 +125,80 @@ export default function Page() {
                       }}
                     >
                       Луна
+                    </p>
+                  </>
+                )}
+                {item.name == "Марс" && (
+                  <>
+                    <div
+                      className="solar-planet"
+                      style={{
+                        width: item.size / 5.4 + "rem",
+                        height: item.size / 5.4 + "rem",
+                        top: (index + 1) * 95 + "px",
+                        left: "calc(50% + 25px)",
+                        zIndex: 150,
+                      }}
+                      onClick={() => {
+                        navigate("/planet/phobos");
+                      }}
+                    />
+                    <div
+                      className="solar-orbit"
+                      style={{
+                        width: "45px",
+                        height: "45px",
+                        top: (index + 1) * 95 + "px",
+                        left: "calc(50%)",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    />
+                    <p
+                      className="solar-planet-name show"
+                      style={{
+                        top: (index + 1) * 95 + "px",
+                        left: "calc(50% + 25px)",
+                      }}
+                      onClick={() => {
+                        navigate("/planet/phobos");
+                      }}
+                    >
+                      Фобос
+                    </p>
+                    <div
+                      className="solar-planet"
+                      style={{
+                        width: item.size / 5.4 + "rem",
+                        height: item.size / 5.4 + "rem",
+                        top: (index + 1) * 95 + "px",
+                        left: "calc(50% + 45px)",
+                        zIndex: 150,
+                      }}
+                      onClick={() => {
+                        navigate("/planet/deimos");
+                      }}
+                    />
+                    <div
+                      className="solar-orbit"
+                      style={{
+                        width: "90px",
+                        height: "90px",
+                        top: (index + 1) * 95 + "px",
+                        left: "calc(50%)",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    />
+                    <p
+                      className="solar-planet-name show"
+                      style={{
+                        top: (index + 1) * 95 - 45 + "px",
+                        left: "calc(50% + 70px)",
+                      }}
+                      onClick={() => {
+                        navigate("/planet/deimos");
+                      }}
+                    >
+                      Деймос
                     </p>
                   </>
                 )}
