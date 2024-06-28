@@ -5,6 +5,7 @@ import TextBlock from "../../views/textBlock/View";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import planets from "../../../../data/planets.json";
 import Star from "../../views/Star";
+import { RGB_PVRTC_2BPPV1_Format } from "three";
 
 export default function Page() {
   const [stars, setStars] = useState([]);
@@ -67,9 +68,39 @@ export default function Page() {
           </div>
         );
       })}
+
       <button onClick={() => navigate(-1)} className="planet-go-back-button">
         <img src="/back.svg" width={"35rem"} height={"35rem"} />
       </button>
+
+      {/* <ul className="planet-info-list2">
+        {planetInfo.about.slice(0, 3).map((item, index) => (
+          <TextBlock
+            key={index}
+            title={item.name}
+            text={item.text}
+            style={{
+              zIndex: 100,
+              width: 200,
+            }}
+          />
+        ))}
+      </ul>
+
+      <ul className="planet-info-list1">
+        {planetInfo.about.slice(3, 5).map((item, index) => (
+          <TextBlock
+            key={index}
+            title={item.name}
+            text={item.text}
+            style={{
+              zIndex: 100,
+              width: 200,
+            }}
+          />
+        ))}
+      </ul> */}
+
       <h1 className="earth-title">{planetInfo.name}</h1>
       <Model
         modelPath={planetInfo.path}
@@ -89,6 +120,7 @@ export default function Page() {
           >
             <img src="/close.svg" width={"30rem"} height={"30rem"} />
           </button>
+
           <ul className="planet-info-list">
             {planetInfo.about.map((item, index) => (
               <TextBlock
@@ -101,17 +133,6 @@ export default function Page() {
                 }}
               />
             ))}
-            {/* {planetName == "earth" && (
-              <TextBlock
-                key={-1}
-                title={"Влияние на здоровье"}
-                text={"Микрогравитация, излучение и многое другое"}
-                style={{
-                  zIndex: 100,
-                  width: 200,
-                }}
-              />
-            )} */}
           </ul>
         </div>
       )}

@@ -40,6 +40,29 @@
   border: 3px dotted var(--hidden-text-color);
 }
 
+.solar-asteroid-orbit1 {
+  position: absolute;
+  left: 50%;
+  background: url("/asteroid.svg") repeat;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  opacity: 0.5;
+}
+.solar-asteroid-orbit1:hover {
+  opacity: 1;
+}
+.solar-asteroid-orbit2 {
+  position: absolute;
+  left: 50%;
+  background-color: var(--background-color);
+  transform: translateX(-50%);
+  border-radius: 100%;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
 .solar-planet {
   position: absolute;
   left: 50%;
