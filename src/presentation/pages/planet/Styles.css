@@ -36,10 +36,16 @@
   margin: 0
 }
 
+@media (max-width: 750px) {
+  .earth-title {
+    font-size: 28rem;
+  }
+}
+
 .planet-open-modal-button {
   position: absolute;
   bottom: 20px;
-  font-size: 16rem;
+  font-size: 19rem;
   text-align: center;
   font-family: var(--font);
   color: var(--text-color);

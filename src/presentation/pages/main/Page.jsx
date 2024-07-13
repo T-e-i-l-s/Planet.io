@@ -186,7 +186,7 @@ export default function Page() {
             style={{
               top: "10%",
               left: "3%",
-              width: "500px",
+              width: "300px",
               height: "300px",
             }}
             onClick={() => {

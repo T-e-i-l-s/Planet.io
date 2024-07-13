@@ -73,14 +73,7 @@ export default function Page() {
       >
         <img src="/back.svg" width={"35rem"} height={"35rem"} />
       </button>
-      <h1
-        className="constellation-title"
-        style={{
-          top: window.innerWidth < 750 ? "60px" : "20px",
-        }}
-      >
-        {constellationInfo.name}
-      </h1>
+      <h1 className="constellation-title">{constellationInfo.name}</h1>
 
       <img className="constellation-image" src={constellationInfo.path} />
 

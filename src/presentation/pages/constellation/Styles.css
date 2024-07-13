@@ -32,7 +32,14 @@
   font-family: var(--font);
   color: var(--text-color);
   z-index: 100;
-  margin: 0
+  margin: 0;
+  top: 20px;
+}
+
+@media (max-width: 750px) {
+  .constellation-title {
+    font-size: 28rem;
+  }
 }
 
 
@@ -47,7 +54,7 @@
 .constellation-open-modal-button {
   position: absolute;
   bottom: 20px;
-  font-size: 16rem;
+  font-size: 19rem;
   text-align: center;
   font-family: var(--font);
   color: var(--text-color);
