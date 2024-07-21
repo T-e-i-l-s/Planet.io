@@ -27,7 +27,7 @@ function Loading() {
 export default function View({ modelPath, scale, light }) {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         <Canvas
           shadows
           camera={{ fov: 45 }}
